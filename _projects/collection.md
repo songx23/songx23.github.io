@@ -1,7 +1,7 @@
 ---
-title: 'Demo Project'
-subtitle: 'This is a demo'
-date: 2018-06-30 00:00:00
+title: 'Collection'
+subtitle: 'LEGO and stamp collection'
+date: 2020-02-16 00:00:00
 featured_image: '/images/demo/demo-square.jpg'
 ---
 

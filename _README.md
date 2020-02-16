@@ -147,10 +147,14 @@ These control the main content of your website, and are found inside the `_proje
 
 Take a look at the demo content inside each folder for full descriptions on what you can do inside these, and to use as a template for your own content.
 
+Markdown files in `_projects` folder is ordered by date. The latest one will appear on top
+
 ---
 
 ## Any questions?
 
 If you have any questions or feedback about the theme, don't hesitate to reach out to hello@jekyllthemes.io for 1-to-1 support direct from the developers!
 
-🤘
+---
+
+## Branching strategy
