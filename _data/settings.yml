@@ -1,5 +1,5 @@
 basic_settings:
-  site_title: Song Xue
+  site_title: Song X.
   site_tagline: I'm a sophisticated software engineer and half platform engineer
   favicon_image: /images/favicon.png
 
@@ -157,5 +157,5 @@ advanced_settings:
   ajax_loading: true
   analytics_code: ""
   custom_styles: ""
-  header_js: "https://www.google.com/recaptcha/api.js?render=6LcwUNkUAAAAAL313zJ1M3-c8iY8nIDtqxxCRL8b"
+  header_js: ""
   footer_js: ""
