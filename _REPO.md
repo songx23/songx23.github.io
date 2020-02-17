@@ -6,7 +6,7 @@ Features and bugs are recorded as issues in this repository. Issues are grouped 
 
 ### Managing issues and milestones
 
-Issues and milestones are managed by Github. For better visualization of the milestones, I duplicate them in GitKraken Timeline and keep them in sync. However, issues will not be duplicated as it doesn't provide much value.
+Issues and milestones are managed by Github. For better visualization of the milestones, I duplicate them in GitKraken Timeline and keep them in sync. However, issues will not be duplicated as it doesn't provide much value. Whenever a milestone is finished, I tag the current master with a version number.
 
 ### Branching strategy
 
@@ -17,4 +17,8 @@ Issues and milestones are managed by Github. For better visualization of the mil
 
 ### CI pipeline
 
+Potential CI pipeline to guard the merging. Once I have that in place, I will restrict committing to master branch directly.
+
 ### CD pipeline
+
+CD pipeline is managed by Github as it has a webhook on master branch. When there's a new commit in master, it will deploy Github Pages.
