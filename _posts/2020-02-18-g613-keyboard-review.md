@@ -1,11 +1,11 @@
 ---
-title: 'Collection'
-subtitle: 'LEGO and stamp collection'
-date: 2020-02-16 00:00:00
-featured_image: '/images/demo/demo-square.jpg'
+title: 'Logitech G613 Keyboard Review'
+date: 2020-02-18 00:00:00
+featured_image: 'https://www.logitechg.com/content/dam/gaming/en/products/g613/g613-hero-desktop.png.imgw.2816.2816.png'
+excerpt: G613 is my first truly wireless mechanical keyboard
 ---
 
-![](/images/demo/demo-landscape.jpg)
+<img src="https://www.logitechg.com/content/dam/gaming/en/products/g613/g613-hero-desktop.png.imgw.2816.2816.png">
 
 ## Demo content
 
@@ -54,7 +54,7 @@ You can throw in some horizontal rules too:
 Here's a really neat custom feature we added – galleries:
 
 <div class="gallery" data-columns="3">
-	<img src="/images/demo/demo-portrait.jpg">
+	<img src="https://www.logitechg.com/content/dam/gaming/en/products/g613/g613-hero-desktop.png.imgw.2816.2816.png">
 	<img src="/images/demo/demo-landscape.jpg">
 	<img src="/images/demo/demo-square.jpg">
 	<img src="/images/demo/demo-landscape-2.jpg">
@@ -92,7 +92,7 @@ A nice little feature: the carousel only advances when it is in view, so your vi
 
 Videos are an awesome way to show off your work in a more engaging and personal way, and we’ve made sure they work great on our themes. Just paste an embed code from YouTube or Vimeo, and the theme makes sure it displays perfectly:
 
-<iframe src="https://player.vimeo.com/video/19536258?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/203710832" width="640" height="288" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ---
 
@@ -100,4 +100,4 @@ Videos are an awesome way to show off your work in a more engaging and personal 
 
 We've packed this theme with powerful features to show off your work. Why not put them to use on your new portfolio?
 
-<a href="https://jekyllthemes.io/theme/index-portfolio-jekyll-theme" class="button button--large">Get This Theme</a>
+<a href="https://jekyllthemes.io/theme/journal-personal-jekyll-theme" class="button button--large">Get This Theme</a>
