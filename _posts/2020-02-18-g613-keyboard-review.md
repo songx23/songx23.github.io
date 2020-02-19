@@ -1,7 +1,7 @@
 ---
 title: 'Logitech G613 Keyboard Review'
 date: 2020-02-18 00:00:00
-featured_image: 'https://www.logitechg.com/content/dam/gaming/en/products/g613/g613-hero-desktop.png.imgw.2816.2816.png'
+featured_image: 'https://doc-0s-30-docs.googleusercontent.com/docs/securesc/j3r8uoqqvn0ljusqcehser24urpgj20e/2d64lgdundjq18jhkvl0in9teebsj0ia/1582111800000/17208478203554150165/17208478203554150165/1PkRY5KWN3c7I6CrzFt8PMmsSEDev6TUr?authuser=0'
 excerpt: G613 is my first truly wireless mechanical keyboard
 ---
 
