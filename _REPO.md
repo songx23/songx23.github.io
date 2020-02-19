@@ -22,3 +22,12 @@ Potential CI pipeline to guard the merging. Once I have that in place, I will re
 ### CD pipeline
 
 CD pipeline is managed by Github as it has a webhook on master branch. When there's a new commit in master, it will deploy Github Pages.
+
+## Large File Storage
+
+I'm not storing large content image files in this repository due to storage limitation on Github Pro plan. Apart from the background images, all content images will be stored on Google Drive and the contents will reference the sharable google drive link.
+
+Other options:
+
+- [Git Large File Storage](https://git-lfs.github.com/): not using because it has features that I don't need (like versioning and access control)
+- Cloud bucket on GCP: not using because have no d-dos protection
