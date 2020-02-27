@@ -1,35 +1,38 @@
 ---
-title: About Journal
-subtitle: A stunning personal blog Jekyll theme with an image-focused design.
-description: A stunning personal blog Jekyll theme with an image-focused design.
+title: About Me
+subtitle: Here's the details about my working experience and other stuff
+description: About Me.
 featured_image: /images/background/SongXue.jpg
 ---
 
-![](/images/demo/demo-landscape.jpg)
+![](/images/background/avatar.jpeg)
 
-## Features
+Hi there, my name is Song Xue. Currently, Currently, I live and work in Melbourne, Australia. I have worked as a full stack engineer in startups as well as large enterprises. Therefore, I have extensive experience in application development, infrastructure and architecture design. Personally, I'm very interested in IoT, machine learning and blockchain technology. Apart from work, I play badminton, collect stamps and LEGOs.
 
-Journal is packed with powerful features to showcase your work:
+## Key Skills
 
-* Beautiful, minimal design
-* Fixed sidebar images that animate as you browse
-* Single column post layout
-* Responsive – works perfectly on all devices
-* Portfolio/projects post type to show your work
-* Blog with pagination
-* Sleek Ajax navigation and page transitions
-* Unique 'gallery' feature for image grids and carousels
-* Built-in contact form with Formspree integration
-* Full markdown support and code highlighting
-* Social media icons
-* Fast page rendering
-* Built with SEO best practices in mind
-* Customize everything – colors, spacing, fonts, sizes etc. – via a simple settings file
-* Works with GitHub Pages
-* Updated and supported by the developers
+## Working Experience
 
-## Get Index
+### DigIO (Mantel Group)
 
-Journal is created and supported by [Jekyll Themes](https://jekyllthemes.io), and is available for $49.
+### Computershare Australia
 
-<a href="https://jekyllthemes.io/theme/journal-personal-jekyll-theme" class="button button--large">Get This Theme</a>
+### Formition (Short-term Contract)
+
+### Warehouse1
+
+## Education
+
+### University of Melbourne
+
+### East China University of Science and Technology
+
+## Other achievements
+
+### Certified Google Associated Cloud Engineer
+
+### 2016 GE Industrial Hackathon
+
+### Academic Publication
+
+<!-- <a href="https://jekyllthemes.io/theme/journal-personal-jekyll-theme" class="button button--large">Get This Theme</a> -->
