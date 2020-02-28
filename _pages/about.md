@@ -11,22 +11,80 @@ Hi there, my name is Song Xue. Currently, Currently, I live and work in Melbourn
 
 ## Key Skills
 
-| Language              | Framework     | Platform  | Tooling               | Database |
-|-----------------------|---------------|-----------|-----------------------|----------|
-| Kotlin/Java           | Spring        | Kubenetes | K6                    | MySQL    |
-| Go                    | Node/Express  | Istio     | CloudBuild/Jenkins    | MSSQL    |
-| Typescript/Javascript | .NET Core     | Docker    | Pub/Sub               | Postgres |
-| C#/F#                 |               | GCP/AWS   | IoT Core              | MongoDB  |
+| Language              | Framework     | Platform   | Tooling               | Database |
+|-----------------------|---------------|------------|-----------------------|----------|
+| Kotlin/Java           | Spring        | Kubernetes | K6                    | MySQL    |
+| Go                    | Node/Express  | Istio      | CloudBuild/Jenkins    | MSSQL    |
+| Typescript/Javascript | .NET Core     | Docker     | Pub/Sub               | Postgres |
+| C#/F#                 |               | GCP/AWS    | IoT Core              | MongoDB  |
 
 ## Working Experience
 
 ### DigIO (Mantel Group)
 
+_2019-present_
+
+[DigIO](https://digio.com.au/) is an amazing consultancy business
+
+#### ANZ Open-banking
+
+Tech stack used:
+
+| Language | Platform     | CI/CD                   | Datastore        |
+|----------|--------------|-------------------------|------------------|
+| Go       | Istio on GKE | Cloud Build & Spinnaker | Postgres & Kafka |
+
+_2019-present_
+
+#### ME Enterprise Service Migration
+
+_2019_
+
+Tech stack used:
+
+| Language | Framework         | Platform                  | CI/CD   |
+|----------|-------------------|---------------------------|---------|
+| Kotlin   | Spring & Reactor  | Istio & Kubeenetes on AWS | Jenkins |
+
 ### Computershare Australia
+
+_2018-2019_
+
+Computershare is an international business with over 15,000 employees worldwide. The department I joined in Computershare Utility Service, a consultancy business unit serving Australian's major energy and utility companies.
+
+Tech stack used:
+
+| Language | Framework                  | Platform             | CI/CD                     | Database |
+|----------|----------------------------|----------------------|---------------------------|----------|
+| C#       | .NET Core 2+ & Angular 7+  | IIS & Windows Server | TeamCity & Octopus Deploy | MSSQL    |
 
 ### Formition (Short-term Contract)
 
+_2018_
+
+I joined Formition as a contractor to help them on a project. The project is about helping [MBCM](http://www.mbcm.com.au/index2.php), a body corporate management company to migrate their old visual basic program to a modern web application. My role is to lead the development team and business analysts to deliver high quality software in just 3 months.
+
+Tech stack used:
+
+| Language | Framework                  | Platform             | Database |
+|----------|----------------------------|----------------------|----------|
+| C#       | Kentico & ASP.NET WebForm  | IIS & Windows Server | MSSQL    |
+
 ### Warehouse1
+
+_2016-2018_
+
+Warehouse1 was a local retail business and it had a small in-house dev team building a web application to help operate the business efficiently. I have worked on features like order synchronization, automated purchasing, sales channel integration, supplier integration and etc.
+
+In 2016, Warehouse1 was listed in the [CRN Fast 50](https://www.crn.com.au/gallery/meet-the-2016-crn-fast50-443063/page40) at 11th place.
+
+Tech stack used:
+
+| Language | Framework              | Platform             | Database |
+|----------|------------------------|----------------------|----------|
+| C#       | Kentico & ASP.NET MVC  | IIS & Windows Server | MSSQL    |
+
+Unfortunately, due to cash flow issues, Warehouse1 [called in the administrators](https://www.channelnews.com.au/exclusive-has-melboune-tech-retailer-called-in-the-administrators/) and closed business in 2018.
 
 ## Education
 
