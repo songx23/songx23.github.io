@@ -5,6 +5,8 @@ featured_image: 'https://storage.googleapis.com/songxue-dev-images/content-image
 excerpt: Our lives are more or less impacted by the COVID-19 pandemic by now. No doubt this is a terrible event for all of us and we want to get over it as soon as possible. However, it's a bit (very) hard to say goodbye to social life entirely and be happy to stay at home for the foreseeable future. So I spent some efforts to "bring" my friends together to play one of our favorite table-top board games, power grid. And of course, we are not physically together, please STAY AT HOME!
 ---
 
+## Part 1
+
 Australians had a rough start in 2020, a long and devastating bush fire took many precious things away from us, firemen, houses, wildlife, trees and so on. Not long after we finally got over the disaster, a pandemic hit us again and this time, we lost even more lives. COVID-19 has been spreading wildly across the globe and there's no sign of it slowing down at the moment. Most of the impacted countries have imposed some kind of rules to help stopping the spread. Australia is currently in stage 3 lock down, which means all of us should stay at home and avoid going out. No pubs, no friends gathering, no overseas travel. It's quite hard to get used to this new way of living. Before all of these, I longed for working from home because I have better setup at home than in the office. Whereas after two weeks of working from home, I kinda miss everything I had in the office, especially human interactions, badly.  
 
 One day, I was chatting with my partner about how I miss the times we sat together with friends and play Power Grid and how unfortunate this game doesn't have an online version. All of a sudden, she said "why don't we move this game online?" I laughed and replied "I'm not a game developer, plus how much effort do you think it will take to virtualize such a complicated game? Even after playing it three times, we still need to go back to the rule book." She dragged me up from the sofa and said confidently "Not necessary, it can be quite easy, in fact, I have a perfect tool to do this, come check this out." I was reluctant to move my body but I gave in and walked to our study with her.  
@@ -24,3 +26,21 @@ She smiled and said "Sounds like a plan, can you finish your app by the end of n
 "No problem, I can hack something up quickly. It's not gonna look good by the way, I suck at UI stuff, you have to accept that."  
 "I will take whatever you build as long as it works." said she.
 It was a Saturday evening and we were excited about this little project.
+
+## Part 2
+
+Enough of story-telling in part 1, now let's get to the details of the automated power plant market. I will firstly talk about the architecture of this application.
+
+### Architecture
+
+The architecture is very simple, what I need is an API to handle the interactions such as initiating the game, auction/buy power plants and etc as well as a simple UI for my friends to see which power plants are on the market. These are the two main components of this application. I chose Golang as the language for the backend, Angular as the frontend framework. The reason I chose them is simply because I have previous experience so I can use them efficiently. I don't want to spend too much time learning a new tech stack as I have a very tight deadline.
+
+### Game server
+
+### Game UI
+
+### Deployment
+
+## Part 3
+
+The gaming experience and what I have learned from this project.
