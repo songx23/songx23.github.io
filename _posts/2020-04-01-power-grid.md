@@ -145,4 +145,7 @@ Now, everything is in place. I just need to post the url to my friends and then 
 
 ## Part 3
 
-The gaming experience and what I have learned from this project.
+It's finally time to put everything into test. On a Saturday, my partner and I kicked off a group video chat and introduced the system we built to enable us playing Power Grid online. They were amazed how we put everything together in just a week. We played for 3 hours that day and surprisingly, our system didn't break down. However, we were exhausted after it. we learned playing board game online is really hard and less fun. Often time, we found ourselves speaking at the same time and then we need to repeat again in order so that we can understand what others are saying. Also, moving virtual tokens on the board is quite hard, not everyone has a big monitor at home, if they're using 13 inch laptop, it's quite hard to see the whole board without zooming.  
+Later on, I found what we did is called tabletop simulator. There're existing software doing the exact same thing. We tried a couple afterwards and found the same feelings. It makes winning less exciting and rewarding.  
+I'm glad that I didn't spend too much time on this project as it's very likely that I'm going to throw it away now after using only once, although the process of making this as a working system is really fun. It's been a while since the last time developing software excites me that much.
+Overall, please stay at home to help fight COVID-19 if you can. Maybe play boardgames with who you live with. We can win this!  
