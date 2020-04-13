@@ -37,10 +37,10 @@ To develop this application in a short time frame, I want to keep the architectu
 
 ### Game server
 
-I'm not going to explain how does the power plant market work here, if you're interested, you can find the rule book for Power Grid [here](http://riograndegames.com/getFile.php?id=2162).  
+The game server is the brain of all these, it enforces the logic that reflects the rules. I'm not going to explain how does the power plant market work here, if you're interested, you can find the rule book for Power Grid [here](http://riograndegames.com/getFile.php?id=2162).  
 
-For the game server I developed, it's main job is to display a series of power plants and let users auction and buy them. The state of a game needs to be stored somewhere. The approach I chose is just use a global variable as the data store. The advantage of doing this is I can take out a component, database, from the architecture, thus this makes deployment a bit easier. The disadvantages or limitations are significant. For instance, I can only keep one game running at a time, this solution is pretty much impossible to scale and so on. I wouldn't recommend this approach if you're building a long-lived project but for a quick hack, it's perfect.  
-This is how the database looks like this:  
+The main job of game server is to maintain the state of power plant market, which needs to be stored somewhere. As you might noticed already, I didn't include a database of some sort in the architecture. The approach I chose is to just use a global variable as the data store. The advantage of doing this is I can be lazy and not code the database layer. The disadvantages or limitations are significant. For instance, I can only keep one game running at a time, it is pretty much impossible to scale and so on. I wouldn't recommend this approach if you're working on a long-lived project but for a quick hack, it's acceptable.  
+This is how the data structure looks like:  
 
 ```go
 type Database struct {
@@ -63,9 +63,9 @@ type PowerPlant struct {
 }
 ```
 
-_Note_: the concept of discounted power plants are introduced in the new 2019 recharged edition, just in case you're wondering what that is. Also, in the rule book, stage 3 is called step 3, I just find "stage" is a bit easier to understand.
+_Note_: the concept of discounted power plants is introduced in the new 2019 recharged edition, just in case you're wondering what that is. Also, in the rule book, stage 3 is called step 3, I just find "stage" is a bit easier to understand.
 
-With data store out of way, it's time to create the actual server. I'm using [Gin](https://github.com/gin-gonic/gin) as the web framework for the API server because it's very easy to use and its performance is fast. This is how the router looks like:
+With this out of way, it's time to create the actual server. I'm using [Gin](https://github.com/gin-gonic/gin) as the web framework because it's very easy to use and its performance is fast. This is how the router looks like:
 
 ```go
 func (r *RestHandler) createRoutes() {
@@ -86,19 +86,22 @@ func (r *RestHandler) createRoutes() {
 }
 ```
 
-- Health endpoint is a standard endpoint to show whether the service is functioning.
+The following list shows what function does each endpoint fulfill:
+
+- Health endpoint is a standard endpoint to show whether the service is running.
 - Powerplants endpoint returns all the power plant cards in the game, the response is static.
-- Board endpoint returns the database value, aka the state of the game. The UI is going to consume this endpoint frequently.
-- New game endpoint sets the database value based on the number of players and which country players are playing. I will dig into this part later.
-- Auction endpoint alters a flag in the current market. This is not necessary but it improves the user experience a little bit. I will explain this later in the UI section.
-- Buy endpoint triggers a replacement of power plant in the current market. It will be triggered by players.
-- In Power Grid, a turn is consist of 5 phrases. Only phrase 2 and 5 (which is the end of turn) is related to the power plant market. Thus the end phrase and end turn endpoints trigger certain logic based on game rules.
-- End game endpoint reset the values to default for the data store.
-- CORS middleware is added because Angular enforce CORS by default.
+- Board endpoint returns the game state, aka the global database variable. UI is going to consume this endpoint frequently.
+- New game endpoint sets the game state based on the number of players and which country is being played.
+- Auction endpoint alters a flag in the current market. This is not necessary but it improves the user experience. I will explain this later in the UI section.
+- Buy endpoint replaces a power plant in the current market based on current game stage.
+- In Power Grid, a turn is consist of 5 phrases. The end phrase and end turn endpoints trigger certain rules when activated by ending of phrase 2 and 5.
+- End game endpoint resets the game state to default values.
+
+I'm using CORS middleware because Angular enforce CORS by default.
 
 #### New Game
 
-Power Grid has lots of expansions, each expansion has two countries and some new rules adding on top of the basic rules. Most of the difference between expansions are the set up of the power plant deck. Some of the rules requires to remove cards, some requires to add cards, some even requires to order the deck. It's a good place to use interface to handle different implementations.  
+I want to talk a bit more about what happens when creating a new game. Power Grid is a quite old board game so it has lots of expansions, each expansion provides a new game board showing two different countries. Some new rules are also added to provide new gaming experience. Most of the differences between expansions (_*I have only checked about 4 expansions so it doesn't cover all_) lie in the set up of the power plant deck. Some expansions require to remove power plant cards from deck, some requires to add cards, some even requires to order the deck. This represents a good place to use interface to handle different implementations. Here's the interface I defined.   
 
 ```go
 type CountryRule interface {
@@ -108,14 +111,15 @@ type CountryRule interface {
 ```
 
 - `InitDeck` function handles the removal or addition of certain cards.
-- `Shuffle` function handles the ordering of the deck. For example, China expansion orders the deck til plant number 30 something. So this logic is executed here.
+- `Shuffle` function handles the ordering of the deck. For example, China expansion orders the deck til plant number 30. So this logic is executed here.
 
-This is the main components of the game server, it's very straight forward. Let's move onto the UI part now.
+These are the main components of the game server, the structure is pretty straightforward. The implementation is just a bunch manipulations of two arrays.  
+Let's move on to the UI part now.
 
 ### Game UI
 
-I'm not very good at writing UI so I kept it as simple as possible. To speed up the developing and still keep a decent look, I used ng-material library for all the UI components. They're predefined and looks pretty cool in my opinion.
-There are only two pages for this application, namely starting page and market page.   
+I'm not an UI expert so I kept everything as simple as possible. Besides, I'm a lazy person, I prefer to use existing library to speed things up. I picked ng-material library for UI components as they look pretty cool and Material is natively supported by Angular.  
+There are only two pages for this application, namely starting page and market page.  
 
 #### Start Page
 
@@ -125,7 +129,7 @@ There are only two pages for this application, namely starting page and market p
 	<img src="" style="display:none">
 </div>
 
-The starting page calls the new game endpoint to initialize a new game. As the server can't really handle multiple games running at the same time, I kindly asked all my friends to click the "Join game" button and leave the creation of a game to me. This is quite dangerous because if anyone at any time when we were playing clicked new game, it will overwrite the entire game state, which wipes all the fun. I'm glad that my friends listened to me and nothing like that happened when we played.
+The starting page is a simple form that collects essential play information. The "Start new game" button calls the new game endpoint to initialize a new game. As the server can't really handle multiple games running at the same time, I kindly asked all my friends to click the "Join game" button and leave the creation to me. This is quite dangerous because if anyone at any time clicked the start game button, it will overwrite the entire game state and there's no way to recover the previous state, hence using a single global variable as database is a really bad idea. Fortunately, nothing like that happened when we played.
 
 #### Market Page
 
@@ -135,17 +139,25 @@ The starting page calls the new game endpoint to initialize a new game. As the s
     <img src="" style="display:none">
 </div>
 
-This is the page with most of the interactions. Players can start an auction and buy power plants. The auction button changes a flag to reveal the "Cancel" and "Buy" buttons. The reason I designed an extra step is I want to create a safety net for the buy power plant action. There's no turning back if a player clicked the wrong plant or they had a second thought. I didn't put in any roll back functionalities in the game server. This I believe decrease the chances of wrong operations to minimum and increased the usability of the application. Imagine if a player messed up a buy action, his experience of this game might be ruined. The last thing I want to see is users complaining about how dumb this application is although I know it's quite dumb.  
-You might ask, how do you populates one's interaction to all players? The answer is brute force. I didn't have time to make this app a real-time application. The way I achieve this is ask the UI to query game state every second. And users shouldn't notice that the page is refreshing because Angular only refreshes the components that actually changed. This is a bad way of doing this kind of things because it increases the server load a lot and also the client requires for resources to do constant requests. Just like my decision to use in-memory data store, it has many disadvantages but Power Grid is a 2-6 players game, so at most I will get 360 request per second which my go server can easily handle. The only upside is this is the easiest solution to implement.
+This is the page which players can actually interact "freely". Anyone can start an auction and buy a power plant through this page. The auction button changes a flag in game state so that it can reveal the "Cancel" and "Buy" buttons. The reason I designed an extra step is for creating a safety net when buying power plants. There's no turning back if a player clicked the wrong plant or they had a second thought because there's no roll back functionalities in the game server. This is disastrous for a player when mis-clicked a button. I don't want to punish my friends like this. Therefore, this feature is quite necessary.  
+You might ask, how do you populate one's interaction to all players? I didn't have time to make this a real-time application in the end so the answer is using brute force, make UI queries game state every second. This is another bad decision I know but it works. Users shouldn't really notice that the page is constantly refreshing thanks to Angular's refreshing mechanism and speed. At a glance, this approach increases the server load and also requires more client resources. Whereas Power Grid is a 2-6 players game, so at most I will get 360 request per second which the API server can easily handle.  
 
 ### Deployment
 
-So my application is running smoothly on my local machine, it's time to deploy it to the cloud. I chose to use GCP as I already have a project set up on it. There are two options for easy deployment, I can use AppEngine to host them separately but that doubles the cost. Therefore, I chose the other option, which is a good old compute engine (VM). I don't need fancy specs for the VM and it's pretty cheap to run. The cost of AppEngine is about $0.12/hour and ComputeEngine is about $0.1/hour. So I created a ComputeEngine running Ubuntu LTS and cloned the two repositories. Running them is quite easy, however, there're a couple of annoying things I ran into. First of one, the lack of consistent environments. If for example, I want to spec up the VM, I will have to setup the environment again. Of course, this can be easily resolved by using Docker images but I didn't use it, why? Currently, two applications can run on 1 virtual CPU (half core) and 0.5G memory. Running docker will definitely require more resources than that. The other irritating thing is the IP address is not static. I don't plan to run the server 24/7, so every time I stop the VM, I need to change the IP address in code. Using static IP or keep it running can solve this problem but they're too expensive for this project. Also, I'm pretty sure there are more elegant ways to tackle this but I just didn't have the time to research.  
+So the application is running smoothly on my local machine, it's time to deploy it to the cloud. I chose to use GCP as I already have a project set up on it. There are two options for quick deployment, I can use AppEngine to host the UI and API separately, or I can use a good old VM (ComputeEngine). The cost of two AppEngine is about $0.12/hour and ComputeEngine (low spec, shared resource) is about $0.1/hour. Obviously, I went for the cheapest option.  
+Running them on Ubuntu LTS is quite easy. However, there're a couple of annoying things I want to point out.
+
+1. The lack of Docker usage. I will have to setup the whole environment again if I want to spec up or create a VM. Currently, two applications can run on 1 virtual CPU (half physical core) and 0.5G memory. Running docker will definitely require more resources than that so I chose not to use it for now.
+2. Non-static IP address. I don't plan to run the server 24/7, so every time I stop the VM, I need to change the IP address in environment. On top of my head, using static IP or keeping the VM running can solve this problem but they're too expensive for this project.
 Now, everything is in place. I just need to post the url to my friends and then we can have an online power grid game together!
 
 ## Part 3
 
-It's finally time to put everything into test. On a Saturday, my partner and I kicked off a group video chat and introduced the system we built to enable us playing Power Grid online. They were amazed how we put everything together in just a week. We played for 3 hours that day and surprisingly, our system didn't break down. However, we were exhausted after it. we learned playing board game online is really hard and less fun. Often time, we found ourselves speaking at the same time and then we need to repeat again in order so that we can understand what others are saying. Also, moving virtual tokens on the board is quite hard, not everyone has a big monitor at home, if they're using 13 inch laptop, it's quite hard to see the whole board without zooming.  
-Later on, I found what we did is called tabletop simulator. There're existing software doing the exact same thing. We tried a couple afterwards and found the same feelings. It makes winning less exciting and rewarding.  
-I'm glad that I didn't spend too much time on this project as it's very likely that I'm going to throw it away now after using only once, although the process of making this as a working system is really fun. It's been a while since the last time developing software excites me that much.
-Overall, please stay at home to help fight COVID-19 if you can. Maybe play boardgames with who you live with. We can win this!  
+It's finally time to put everything into test. On a Saturday, my partner and I kicked off a group video chat and introduced the system we built. They were amazed how we put everything together in just a week. We played for 3 hours that day and surprisingly, our system didn't break down, everything works just "fine" but we were exhausted after it.  
+It feels totally different to play table top game online in a bad way. Often time, we all spoke at the same time and then we need to repeat ourselves again so that we can understand what others are saying. On the other hand, moving virtual tokens on the board is quite hard and slow, I found lots of time when we were waiting for others to finish their actions, our attention was distracted to other places like YouTube. Last but not the least, most of us were using laptop, it's quite hard to see the whole board without zooming in and out. I missed lots of things outside of my sight and that led to some bad choices. All of above resulted, to be honest, a quite unpleasant gaming experience.  
+Later on, I found what we built is called tabletop simulator. There're some existing software doing the exact same thing (none of them have PowerGrid though). My partner and I tried a couple simulators afterwards and had the same feelings. I guess it's really hard to migrate table top board game online while maintaining the same gaming experience.  
+I'm glad that I didn't spend too much time on this project as it's very likely that I'm going to park it for a while, although the building process was really fun. It's been a while since the last time I participate in a hackathon. Good to find that feeling back.  
+
+## The most important thing
+
+PLEASE stay at home if you can to help fight COVID-19. The sooner we can take this under control, the sooner we can get our pre-COVID19 lifestyle back. I don't know about you but I really miss it.
