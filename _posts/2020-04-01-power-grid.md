@@ -86,10 +86,10 @@ func (r *RestHandler) createRoutes() {
 }
 ```
 
-The following list shows what function does each endpoint fulfill:
+The following list shows what function does each endpoint fulfils:
 
 - Health endpoint is a standard endpoint to show whether the service is running.
-- Powerplants endpoint returns all the power plant cards in the game, the response is static.
+- Power plants endpoint returns all the power plant cards in the game, the response is static.
 - Board endpoint returns the game state, aka the global database variable. UI is going to consume this endpoint frequently.
 - New game endpoint sets the game state based on the number of players and which country is being played.
 - Auction endpoint alters a flag in the current market. This is not necessary but it improves the user experience. I will explain this later in the UI section.
