@@ -1,7 +1,7 @@
 ---
 title: LEGO Architecture series - Tokyo Skyline
 date: 2020-03-01 00:00:00
-featured_image: 'https://storage.googleapis.com/songxue-dev-images/content-images/2020-03-01-lego-architecture-tokyo/feature.JPG'
+featured_image: 'https://storage.googleapis.com/songxue-dev-images/content-images/2020-03-01-lego-architecture-tokyo/feature.jpeg'
 excerpt: The new skyline set featuring Tokyo, a busy city and the famous and majestic Mt. Fuji.
 ---
 
@@ -10,7 +10,7 @@ excerpt: The new skyline set featuring Tokyo, a busy city and the famous and maj
 I visited Tokyo on my holiday last year, I was very impressed by how massive and modern this city is. The locals are very helpful and friendly, most of them understand English. One thing I loved the most is the food there, such as Sukiyaki, Steak, Sushi, Ramen and lots delicious street food.
 
 <div class="gallery" data-columns="1">
-	<img src="https://storage.googleapis.com/songxue-dev-images/content-images/2020-03-01-lego-architecture-tokyo/image.JPG">
+	<img src="https://storage.googleapis.com/songxue-dev-images/content-images/2020-03-01-lego-architecture-tokyo/image.jpeg">
 </div>
 
 This set is featuring the following landmarks:
