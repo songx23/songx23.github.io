@@ -102,11 +102,11 @@ func main() {
 This is the famous helloworld app, pretty simple, right?  
 Let me walk you through each line and explain what's happening here.
 
-Line 1: define the main package.  
+Line 1: declare the main package. Main package tells Go compiler that this package is an executable application.
 Line 3: import the `fmt` package that we will use later for print strings in the console.
-Line 5: default the `main` function. Main function will be the entry point of this app.  
-Line 6: Use the `fmt` package to print "Hello world!".  
-Line 7: closing main function.  
+Line 5: declare the `main` function. Main function will be the entry point of the executable.  
+Line 6: use the `fmt` package to print "Hello world!".  
+Line 7: close main function.  
 
 Now we can run the app. Switch to your terminal window (shortcut: control+`) and run the app using:  
 
