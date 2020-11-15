@@ -11,7 +11,9 @@ excerpt: "In the 21st century, our lives are getting better and more people are 
 
 One of my ex-colleagues once told me that he only sleeps 4 hours per day and he can get through the day just fine. I was so jealous of him because I need at least 7 hours of sleep every day to be able to get out of my bed in the morning. Time is fair to all beings on Earth. Humans, animals, plants, insects all get 24 hours in a day. Not a second more, not a second less. If a person only needs 4-hour sleep each day, that means they get to do a lot more than those who sleep 8 hours. Let’s do some simple maths.
 
-> # 4 hours * 365 days / 24 hours/day = 60.83 days
+```
+4 hours * 365 days / 24 hours/day = 60.83 days
+```
 
 Wow, my ex-colleague “lives” two more months than me in a year. Isn’t sleep seem like a total waste of life(time)? I wish I can still function well with only 4-hour sleep at night.
 
@@ -49,9 +51,9 @@ Police and government have spent heaps of money on preventing drunk driving. Tak
 
 Sleep is a necessity to the human body, just like food and water. Humans can survive for about 30 days without food. Total sleep deprivation for about 30 days will result in death as well. Fatal Familial Insomnia (FFI) is a genetic disease which has no cure at the moment. One of the symptoms of FFI in the late stage is total sleep deprivation. Once that kicks in, a patient’s lifespan is predictable. Sleeping is really a serious business!
 
-> # Overall, getting enough sleep every day helps us to live a long healthy life. 
+**Overall, getting enough sleep every day helps us to live a long healthy life.**
 
-** These are not all the benefits mentioned in the book. If you’re interested in more details and the science behind them, I highly recommend you to read the book.*
+*\*These are not all the benefits mentioned in the book. If you’re interested in more details and the science behind them, I highly recommend you to read the book.*
 
 ## Mom knows better
 
