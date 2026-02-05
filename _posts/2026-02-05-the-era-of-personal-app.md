@@ -11,7 +11,10 @@ I am a software engineer by trade, which means I spend the vast majority of my w
 
 For about 18 months, I used a physical pocket notebook to track my non-essential purchases—things like clothes, shoes, games, or power tools that I didn't necessarily *need*, but definitely *wanted*. Like many, I am trying to fight the pull of consumerism. My system was specific: I didn't just want to track the price; I wanted to write down *why* I bought an item, and then return to that entry 3, 6, or 12 months later to conduct a "long-term review." This reflection helped me understand which purchases truly brought happiness and which were just dopamine-fueled impulse buys.
 
-![Image 1](https://tinyurl.com/3225zdxx) ![Image 2](https://tinyurl.com/8uu8teph)
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://tinyurl.com/3225zdxx" style="width: 48%;" />
+    <img src="https://tinyurl.com/8uu8teph" style="width: 48%;" />
+</div>
 
 It was a noble experiment, but it eventually hit a wall.
 
