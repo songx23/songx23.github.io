@@ -1,7 +1,7 @@
 ---
 title: "The Era of the Personal App: Why the Future of Software is a Market of One"
 date: 2026-02-05 00:00:00
-featured_image: 'https://tinyurl.com/mtv9jpps'
+featured_image: 'https://tinyurl.com/4769ddpx'
 excerpt: I built a custom Android app in 4 hours using AI. Why the future of software belongs to the "Market of One"—and how you can build your own.
 ---
 
@@ -10,6 +10,8 @@ excerpt: I built a custom Android app in 4 hours using AI. Why the future of sof
 I am a software engineer by trade, which means I spend the vast majority of my waking hours typing code into a dark screen (though these days, I'm mostly talking to AI agents). Because of this, I often crave the opposite: the slow, deliberate friction of pen on paper. Writing things down manually forces me to think deeper, breaking the "auto-pilot" mode that high-speed typing often induces.
 
 For about 18 months, I used a physical pocket notebook to track my non-essential purchases—things like clothes, shoes, games, or power tools that I didn't necessarily *need*, but definitely *wanted*. Like many, I am trying to fight the pull of consumerism. My system was specific: I didn't just want to track the price; I wanted to write down *why* I bought an item, and then return to that entry 3, 6, or 12 months later to conduct a "long-term review." This reflection helped me understand which purchases truly brought happiness and which were just dopamine-fueled impulse buys.
+
+![Image 1](https://tinyurl.com/3225zdxx) ![Image 2](https://tinyurl.com/8uu8teph)
 
 It was a noble experiment, but it eventually hit a wall.
 
