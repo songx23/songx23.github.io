@@ -38,6 +38,11 @@ Instead, I decided to test the waters of **Agentic Programming**. I described my
 
 It took about 4 hours to go from that initial prompt to the AI providing me with an installable file (an APK for Android), and finally to a basic, functioning Android app on my phone.
 
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://tinyurl.com/33sw4ymy" style="width: 48%;" />
+    <img src="https://tinyurl.com/bdzhasd3" style="width: 48%;" />
+</div>
+
 I didn't need to set up a complex development environment. I didn't need to spend days designing a UI. I just needed the **idea**. This creates a fundamental democratization of software: You don't need coding knowledge to start building; you just need to know what problem you want to solve. And trust me, despite being a software engineer, I had no idea how to build a native Android app before this. I still don't, XD.
 
 ## The Death of the Translation Layer
@@ -55,6 +60,11 @@ When I built my notebook app, I didn't have to write a specification document ex
 The first version wasn't perfect, but that's the beauty of it. When I started using the app, I found friction points I hadn't anticipated. In a traditional app, I would have to file a feature request and hope the developers care enough to fix it in v2.0.
 
 With my custom app, I just went back to the agent. I spent a few more hours refining the logic, tweaking the UI, and smoothing out the workflow. The app works like magic now because it was evolved specifically *by* me, *for* me.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://tinyurl.com/2w2ax398" style="width: 48%;" />
+    <img src="https://tinyurl.com/36h4xcx2" style="width: 48%;" />
+</div>
 
 This is the concept of **Disposable & Ephemeral Software**. The cost of building this was so low that if my needs change next year, I won't feel bad about deleting this app and building a new one. Software becomes as flexible as a spreadsheet but as powerful as a native application.
 
